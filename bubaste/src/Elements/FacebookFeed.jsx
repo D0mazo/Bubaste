@@ -30,7 +30,7 @@ const Feed = () => {
         <div className="fb-page"
             data-href="https://www.facebook.com/bubaste"
             data-tabs="timeline"
-            data-width="700"
+            data-width="500"
             data-height=""
             data-small-header="false"
             data-adapt-container-width="true"
