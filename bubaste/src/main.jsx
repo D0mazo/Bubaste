@@ -1,28 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // Import ReactDOM.render instead of ReactDOM
+import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import ColorSchemesExample from './Elements/Navigation.jsx';
-import StackedExample from './Elements/Links.jsx';
-import FluidExample from './Elements/ImageSlider.jsx';
 import Feed from './Elements/FacebookFeed.jsx';
 import ShapeExample from './Elements/Galery.jsx';
 import BasicExample from './Elements/Articles.jsx';
+import SliderPhoto from './Elements/ImageSlider.jsx';
+import LogoSlider from './Elements/LogoSlider.jsx';
 
 ReactDOM.render(
     <React.StrictMode>
         <ColorSchemesExample />
-        <FluidExample />
-        <div style={{ maxWidth: '100%', overflowX: 'auto' }}>
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '0 20px' }}>
-                <StackedExample style={{ flex: '1 0 15%' }} />
-                <ShapeExample style={{ flex: '1 0 60%' }} />
-                <Feed style={{ flex: '1 0 25%' }} />
+        <LogoSlider />
+        <SliderPhoto />
+        <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'inline-block', textAlign: 'left' }}>
+                <div style={{ width: '100%' }}>
+                    <Feed />
+                </div>
+                <ShapeExample />
             </div>
         </div>
         <BasicExample />
         <App />
     </React.StrictMode>,
-    document.getElementById('root') // Call ReactDOM.render with the root DOM element
+    document.getElementById('root') 
 );
