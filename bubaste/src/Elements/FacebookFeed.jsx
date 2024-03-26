@@ -4,7 +4,8 @@ const Feed = () => {
     useEffect(() => {
         // Dynamically load Facebook SDK script
         const script = document.createElement('script');
-        script.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=your-app-id&autoLogAppEvents=1";
+        const sdkUrl = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=your-app-id&autoLogAppEvents=1`;
+        script.src = sdkUrl;
         script.async = true;
 
         // Callback function to initialize the SDK after the script is loaded
@@ -27,7 +28,8 @@ const Feed = () => {
     }, []);
 
     return (
-        <div className="fb-page"
+        <div id="fb"
+            className="fb-page"
             data-href="https://www.facebook.com/bubaste"
             data-tabs="timeline"
             data-width="500"
@@ -35,7 +37,12 @@ const Feed = () => {
             data-small-header="false"
             data-adapt-container-width="true"
             data-hide-cover="false"
-            data-show-facepile="true">
+            data-show-facepile="true"
+            style={{
+                marginTop: '20px',
+                maxWidth: '100%'
+            }} >
+           
             <blockquote cite="https://www.facebook.com/bubaste"
                 className="fb-xfbml-parse-ignore">
                 <a href="https://www.facebook.com/bubaste">Bubastė</a>
@@ -45,3 +52,4 @@ const Feed = () => {
 };
 
 export default Feed;
+
